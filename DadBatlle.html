@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DadBatlle Leaderboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        header {
+            background: #1c1c1c;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #f39c12;
+        }
+        header a {
+            color: #f39c12;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .content {
+            padding: 20px;
+        }
+        .difficulty-select {
+            margin-bottom: 20px;
+        }
+        .difficulty-select label {
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+        .difficulty-select select {
+            padding: 5px;
+            font-size: 1rem;
+            background-color: #1c1c1c;
+            color: #ffffff;
+            border: 1px solid #444;
+            border-radius: 5px;
+        }
+        .leaderboard table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .leaderboard th, .leaderboard td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #444;
+        }
+        .leaderboard th {
+            background: #333;
+        }
+        .leaderboard td {
+            background: #1c1c1c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DadBatlle Leaderboard</h1>
+        <a href="index.html">Back to Home</a>
+    </header>
+    <div class="content">
+        <div class="difficulty-select">
+            <label for="difficulty">Select Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="normal">Normal</option>
+                <option value="hard">Hard</option>
+                <option value="erect">Erect</option>
+                <option value="night">Night</option>
+            </select>
+        </div>
+        <div class="leaderboard">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Player</th>
+                        <th>Score</th>
+                        <th>Cleared %</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardTable">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        const difficulties = {
+            easy: [
+                { player: "DJCreeper", score: 40425, cleared: 87, grade: "G" }
+            ],
+            normal: [
+
+            ],
+            hard: [
+                { player: "DJCreeper", score: 45410, cleared: 88, grade: "G" }
+            ],
+            erect: [
+                { player: "DJCreeper", score: 288363, cleared: 97, grade: "E" }
+            ],
+            night: [
+                { player: "DJCreeper", score: 292347, cleared: 96, grade: "E" }
+            ]
+        };
+
+        const leaderboardTable = document.getElementById("leaderboardTable");
+        const difficultySelect = document.getElementById("difficulty");
+
+        function updateLeaderboard(difficulty) {
+            const data = difficulties[difficulty];
+            data.sort((a, b) => b.score - a.score);
+
+            leaderboardTable.innerHTML = "";
+            data.forEach((entry, index) => {
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${entry.player}</td>
+                        <td>${entry.score}</td>
+                        <td>${entry.cleared}%</td>
+                        <td>${entry.grade}</td>
+                    </tr>
+                `;
+                leaderboardTable.innerHTML += row;
+            });
+        }
+        updateLeaderboard("easy");
+        difficultySelect.addEventListener("change", (e) => {
+            updateLeaderboard(e.target.value);
+        });
+    </script>
+</body>
+</html>
