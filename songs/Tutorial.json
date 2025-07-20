@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "composer": "Kawai Sprite",
+    "bpm": 100,
+    "duration": "1:07",
+    "difficulties": {
+      "easy": 0,
+      "normal": 0,
+      "hard": 1
+    }
+  },
+  "easy": [
+    { "player": "DJCreeper", "score": 15278, "cleared": 100, "grade": "Perfect Full Combo" }
+  ],
+  "normal": [
+    { "player": "DJCreeper", "score": 15402, "cleared": 100, "grade": "Full Combo" }
+  ],
+  "hard": [
+    { "player": "DJCreeper", "score": 22932, "cleared": 100, "grade": "Full Combo" }
+  ]
+}

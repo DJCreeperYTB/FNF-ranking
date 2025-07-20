@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "composer": "DJCreeper",
+    "bpm": 160,
+    "duration": "2:45",
+    "difficulties": {
+      "easy": 3,
+      "normal": 5,
+      "hard": 8,
+      "erect": 11,
+      "night": 15
+    }
+  },
+  "easy": [
+    { "player": "Player1", "score": 11000, "cleared": 90, "grade": "Excellent" },
+    { "player": "Player2", "score": 9000, "cleared": 85, "grade": "Great" }
+  ],
+  "normal": [
+    { "player": "Player1", "score": 12000, "cleared": 95, "grade": "Excellent" }
+  ],
+  "hard": [
+    { "player": "Player1", "score": 15000, "cleared": 97, "grade": "Excellent" }
+  ],
+  "erect": [
+    { "player": "Player1", "score": 20000, "cleared": 98, "grade": "Excellent" }
+  ],
+  "night": [
+    { "player": "Player1", "score": 25000, "cleared": 99, "grade": "Excellent" }
+  ]
+}

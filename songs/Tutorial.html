@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Leaderboard - Test Song</title>
+  <title>Leaderboard - Tutorial</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -92,8 +92,8 @@
 </head>
 <body>
   <header>
-    <h1>FNF - Leaderboard</h1>
-    <a href="index.html">🏠 Home</a>
+    <h1>Tutorial</h1>
+    <a href="/index.html">🏠 Home</a>
   </header>
 
   <div class="content">
@@ -109,14 +109,12 @@
             <option value="easy">Facile</option>
             <option value="normal" selected>Normal</option>
             <option value="hard">Difficile</option>
-            <option value="erect">Erect</option>
-            <option value="night">Nightmare</option>
           </select>
         </div>
         <p class="stars" id="difficultyStars">☆☆☆☆☆☆☆☆☆☆</p>
       </div>
       <div class="song-image">
-        <img src="pictures/picture_test.png" alt="Image de la chanson">
+        <img src="/pictures/FNF_VOL1.jpg" alt="Image de la chanson">
       </div>
     </div>
 
@@ -175,7 +173,7 @@
       starDisplay.textContent = renderStars(difficultyValue);
     }
 
-    fetch("test.json")
+    fetch("Tutorial.json")
       .then(response => response.json())
       .then(data => {
         jsonData = data;
